@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+.body, html{
+  /* border:4px solid yellow; */
+  width: 100dvw;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+.UserInfoBg{
+background: #969696;
+background: linear-gradient(90deg, rgba(150, 150, 150, 1) 0%, rgba(130, 130, 130, 1) 35%, rgba(106, 114, 130, 1) 100%);
+}
+/* styles.css */
+.scrollbar-z {
+  overflow: auto;
+}
+
+.scrollbar-z::-webkit-scrollbar {
+  z-index: 50;
+  width: 8px;
+}
+
+.scrollbar-z::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-z::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2.0s infinite linear; /* ⚡ linear makes it smooth */
+}
+
+
+
+img {
+  image-rendering: -webkit-optimize-contrast; /* helps sharpness in some browsers */
+  image-rendering: crisp-edges; /* optional */
+}
