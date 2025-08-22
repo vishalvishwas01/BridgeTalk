@@ -7,7 +7,6 @@ import doodlepr from '/doodlepr.png?url'
 import { db } from '../lib/firebase'
 import upload from '../lib/upload'
 import Gallery from '../ui/SVG/Gallery'
-import Camera from '../ui/SVG/Camera'
 import Mic from '../ui/SVG/Mic'
 import { FaArrowLeft } from "react-icons/fa6";
 import Arrow from '../ui/SVG/Arrow'
@@ -15,7 +14,6 @@ import Emojis from '../ui/SVG/Emojis'
 import { Download } from '../ui/SVG/Download'
 import Pause from '../ui/SVG/Pause'
 import { ArrowDown } from "lucide-react";
-import CameraModal from './CameraModal'
 import { FaFileAlt } from "react-icons/fa";
 import Document from '../ui/SVG/Document'
 import {LiveAudioVisualizer } from 'react-audio-visualize';
@@ -26,6 +24,7 @@ import {MoonLoader, SyncLoader} from "react-spinners"
 import {DoubleTickWhite, DoubleTickBlue} from '../ui/SVG/DoubleTick'
 import TranslatedMessage from './TranslatedMessage'
 import CameraButton from './Camerabutton'
+import { LiveAudioVisualizer } from 'react-audio-visualize'
 
 
 
@@ -1155,7 +1154,7 @@ const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
                     gap={1}
                     fftSize={1024}
                     smoothingTimeConstant={0.4}
-                    barColor="rgb(239, 68, 68)" // tailwind red-500
+                    barColor="rgb(239, 68, 68)"
                     />
                   )}
                   {mediaRecorderRef.current && <div className='text-red-500 font-mono text-xl mb-3'>{formatTime(recordingTime)}</div>}
@@ -1165,7 +1164,6 @@ const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
           <div className='w-full h-auto flex justify-between items-center'>
             {!isRecording && <div className='w-full h-full flex justify-start items-center gap-3'>
                <label htmlFor='file'><Gallery/></label><input type='file' id='file' className='hidden' accept="image/*,video/*" onChange={handleFile}/>
-               {/* <label onClick={() => setCameraOpen(true)} className="cursor-pointer"><Camera /></label> */}
                <CameraButton/>
                <label htmlFor='Doc' className='cursor-pointer'><Document/></label><input type='file' id='Doc' className='hidden' accept=".pdf,.doc,.docx"  onChange={handleDoc}/>
                
