@@ -24,7 +24,6 @@ import {MoonLoader, SyncLoader} from "react-spinners"
 import {DoubleTickWhite, DoubleTickBlue} from '../ui/SVG/DoubleTick'
 import TranslatedMessage from './TranslatedMessage'
 import CameraButton from './Camerabutton'
-import { LiveAudioVisualizer } from 'react-audio-visualize'
 
 
 
