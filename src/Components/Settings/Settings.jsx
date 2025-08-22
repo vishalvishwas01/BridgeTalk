@@ -268,9 +268,9 @@ const handleAccountDelete = async () => {
 };
 
 const handleLogOut = ()=>{
+  navigate("/");
   auth.signOut();
   window.location.reload();
-  navigate("/");
 }
 
 
