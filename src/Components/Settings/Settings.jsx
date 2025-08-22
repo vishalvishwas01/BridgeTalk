@@ -420,7 +420,7 @@ const handleLogOut = ()=>{
       </div>
 
       <div className=" text-black mt-4 pl-4 flex sm:hidden justify-start items-center w-full h-auto">
-        <button onClick={()=>auth.signOut()} className="bg-gray-300 px-1 rounded-lg flex gap-1">
+        <button onClick={handleLogOut} className="bg-gray-300 px-1 rounded-lg flex gap-1">
           Log Out
           <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none" stroke="#1c1c1c" stroke-width="0.9120000000000001" stroke-linecap="round" stroke-linejoin="round"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"></path> <polyline points="16 17 21 12 16 7"></polyline> <line x1="21" y1="12" x2="9" y2="12"></line> </g></svg>
           </button>
