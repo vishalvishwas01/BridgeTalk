@@ -5,6 +5,7 @@ import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { db, auth } from '../lib/firebase';
 import { doc, updateDoc, collection, query, where, getDocs } from 'firebase/firestore';
 import { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { MoonLoader } from "react-spinners";
 
 import { sendPasswordResetEmail } from "firebase/auth";
@@ -17,7 +18,7 @@ import {
 
 import { Link } from "react-router-dom";
 import { deleteUser } from "firebase/auth";
-import { deleteDoc, getDoc } from "firebase/firestore";
+import { deleteDoc } from "firebase/firestore";
 import { deleteObject, listAll } from "firebase/storage";
 
 
@@ -38,7 +39,7 @@ const checkUserExists = async (field, value, currentUserId) => {
 
 function Settings() {
   const { currentUser, updateCurrentUserField } = useUserStore();
-  
+  const navigate = useNavigate();
   const [avatarLoader, setAvatarLoader] = useState(false);
   const [resetLoader, setResetLoader] = useState(false);
   const [resetMessage, setResetMessage] = useState("");
@@ -266,7 +267,11 @@ const handleAccountDelete = async () => {
   }
 };
 
-
+const handleLogOut = ()=>{
+  auth.signOut();
+  window.location.reload();
+  navigate("/");
+}
 
 
   

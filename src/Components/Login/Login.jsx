@@ -211,13 +211,13 @@ export function Login() {
                 transition={{ duration: 0.3 }}
               >
                 <LabelInputContainer className="mb-4">
-                  <Label>Email Address</Label>
-                  <Input id="email" name="email" type="email" placeholder="email@gmail.com" required />
+                  <Label className="text-[16px]">Email Address</Label>
+                  <Input id="email" name="email" type="email" className="text-[16px]" placeholder="email@gmail.com" required  />
                 </LabelInputContainer>
 
                 <LabelInputContainer>
-                  <Label>Password</Label>
-                  <Input id="password" name="password" type="password" placeholder="Enter your password" />
+                  <Label className="text-[16px]">Password</Label>
+                  <Input id="password" name="password" type="password" placeholder="Enter your password" className="text-[16px]" />
                 </LabelInputContainer>
 
                 <button
@@ -266,18 +266,18 @@ export function Login() {
                 </div>
 
                 <LabelInputContainer className="mb-4">
-                  <Label>Username</Label>
-                  <Input name="username" type="text" placeholder="username" required />
+                  <Label className="text-[16px]">Username</Label>
+                  <Input name="username" type="text" className="text-[16px]" placeholder="username" required />
                 </LabelInputContainer>
 
                 <LabelInputContainer className="mb-4">
-                  <Label>Email Address</Label>
-                  <Input name="email" type="email" placeholder="email@gmail.com" required />
+                  <Label className="text-[16px]">Email Address</Label>
+                  <Input name="email" type="email" className="text-[16px]" placeholder="email@gmail.com" required />
                 </LabelInputContainer>
 
                 <LabelInputContainer>
-                  <Label>Password</Label>
-                  <Input name="password" type="password" placeholder="Enter your password" />
+                  <Label className="text-[16px]">Password</Label>
+                  <Input name="password" type="password" className="text-[16px]" placeholder="Enter your password" />
                 </LabelInputContainer>
 
                 <button
@@ -290,7 +290,7 @@ export function Login() {
               </motion.form>
             )}
 
-            {/* 🔹 Username prompt for Google new users */}
+            {/* Username prompt for Google new users */}
             {googleUser && (
               <motion.form
                 onSubmit={handleGoogleRegister}
@@ -299,12 +299,13 @@ export function Login() {
                 animate={{ opacity: 1, y: 0 }}
               >
                 <LabelInputContainer>
-                  <Label>Set a Username</Label>
+                  <Label className="text-[16px]">Set a Username</Label>
                   <Input
                     value={googleUsername}
                     onChange={(e) => setGoogleUsername(e.target.value)}
                     placeholder="Choose a username"
                     required
+                    className="text-[16px]"
                   />
                 </LabelInputContainer>
 
