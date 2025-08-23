@@ -11,7 +11,7 @@ const upload = (file, onProgress) => {
       "state_changed",
       (snapshot) => {
         const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        if (onProgress) onProgress(Math.floor(progress)); // 🔥 send % back to caller
+        if (onProgress) onProgress(Math.floor(progress));
       },
       (error) => {
         reject("Something went wrong: " + error.code);

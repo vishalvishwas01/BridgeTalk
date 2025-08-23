@@ -36,19 +36,19 @@ const App = () => {
         element={
           currentUser ? (
             <div className="w-full h-[100dvh] flex">
-              {/* ✅ LIST visible only if no chatId OR activeView=list (below xl) */}
+              {/*  LIST visible only if no chatId OR activeView=list (below xl) */}
               <div className={`${activeView === "chat" ? "hidden" : "flex"} xl:flex`}>
                 <List setActiveView={setActiveView} />
               </div>
 
-              {/* ✅ CHAT visible only if chatId exists */}
+              {/*  CHAT visible only if chatId exists */}
               {chatId && (
                 <div className={`${activeView === "list" ? "hidden xl:flex" : "flex"} flex-1`}>
                   <Chat setActiveView={setActiveView} />
                 </div>
               )}
 
-              {/* ✅ DETAIL stays same (you’ll hide it later yourself) */}
+              {/*  DETAIL stays same (you’ll hide it later yourself) */}
               {chatId && <Detail />}
             </div>
           ) : (

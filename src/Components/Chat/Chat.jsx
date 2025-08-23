@@ -407,7 +407,7 @@ const handleDoc = async (e) => {
           data.chats[chatIndex].updatedAt = Date.now();
 
           if (id === currentUser.id) {
-            data.chats[chatIndex].unreadCount = 0; // ✅ sender resets
+            data.chats[chatIndex].unreadCount = 0; //  sender resets
           } else {
             data.chats[chatIndex].unreadCount =
               (data.chats[chatIndex].unreadCount || 0) + 1;

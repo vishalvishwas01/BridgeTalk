@@ -3,7 +3,7 @@ import { useUserStore } from '../lib/userStore';
 import { storage } from "../lib/firebase";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { db, auth } from '../lib/firebase';
-import { doc, updateDoc, collection, query, where, getDocs } from 'firebase/firestore'; // 🔹 added query + getDocs
+import { doc, updateDoc, collection, query, where, getDocs } from 'firebase/firestore'; //  added query + getDocs
 import { useRef, useState } from "react";
 import { MoonLoader } from "react-spinners";
 import { sendPasswordResetEmail } from "firebase/auth";

@@ -36,7 +36,7 @@ const ChatList = ({ setActiveView }) => {
 
     changeChat(chat.chatId, chat.user)
     localStorage.setItem("lastChat", JSON.stringify(chat)) 
-     // ✅ Switch to chat view only on small screens
+     //  Switch to chat view only on small screens
       if (window.innerWidth < 1280) {
         setActiveView("chat");
       }
@@ -142,10 +142,10 @@ useEffect(() => {
             ))}
           </>
         ) : filteredChats.length === 0 ? (
-          // ✅ Show "no users" if empty AFTER loading
+          //  Show "no users" if empty AFTER loading
           <div className="text-gray-600 mt-5">No users to chat</div>
         ) : (
-          // ✅ Show chats
+          //  Show chats
          filteredChats.map((chat) => {
           const isBlocked = chat.user.blocked.includes(currentUser.id);
 

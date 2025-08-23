@@ -24,7 +24,6 @@ export const useUserStore = create((set) => ({
     }
   },
 
-  // 🔹 new method to update a single field of currentUser
   updateCurrentUserField: (field, value) => {
     set((state) => ({
       currentUser: {

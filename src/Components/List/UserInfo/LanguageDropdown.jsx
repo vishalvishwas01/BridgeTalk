@@ -20,7 +20,7 @@ export default function LanguageDropdown({ language, handleLanguageChange }) {
     setOpen(false);
   };
 
-  // 🔹 Close when clicking outside
+  //  Close when clicking outside
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {

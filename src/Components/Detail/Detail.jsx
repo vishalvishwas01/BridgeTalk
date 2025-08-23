@@ -92,7 +92,7 @@ const handleDelete = async () => {
       const updatedChats = currentChats.filter((c) => c.chatId !== chatId);
       await updateDoc(userChatsRef, { chats: updatedChats });
 
-      // ✅ also remove from the other user
+      //  also remove from the other user
       if (removedChat) {
         const otherUserChatsRef = doc(db, "userchats", removedChat.receiverId);
         const otherUserSnap = await getDoc(otherUserChatsRef);
@@ -107,7 +107,7 @@ const handleDelete = async () => {
       }
     }
 
-    // ✅ close chat (show <Nothing/>)
+    //  close chat (show <Nothing/>)
     changeChat(null, null);
      setActiveView("list"); 
     setActiveDetail("");

@@ -204,7 +204,7 @@ const handleAccountDelete = async () => {
     const authUser = auth.currentUser;
     if (!authUser) return;
 
-    // 🔹 STEP 1: Re-authenticate
+    //  STEP 1: Re-authenticate
     if (authUser.providerData[0]?.providerId === "password") {
       const password = prompt("Please confirm your password to delete your account:");
       if (!password) return;
@@ -218,12 +218,12 @@ const handleAccountDelete = async () => {
     const userId = currentUser.id;
     const userRef = doc(db, "users", userId);
 
-    // 🔹 STEP 2: Delete avatar
+    //  STEP 2: Delete avatar
     try {
       await deleteObject(ref(storage, `avatars/${userId}`));
     } catch {}
 
-    // 🔹 STEP 3: Delete uploads
+    //  STEP 3: Delete uploads
     try {
       const uploadsRef = ref(storage, `uploads/${userId}`);
       const list = await listAll(uploadsRef);
@@ -232,7 +232,7 @@ const handleAccountDelete = async () => {
       }
     } catch {}
 
-    // 🔹 STEP 4: Delete chats where user is a member
+    //  STEP 4: Delete chats where user is a member
     const chatsRef = collection(db, "chats");
     const chatSnap = await getDocs(chatsRef);
 

@@ -6,14 +6,14 @@ import {MoonLoader} from "react-spinners"
 
 const AddUser = ({ setAddMode }) => {
   const [user, setUser] = useState(null);
-  const [alreadyExists, setAlreadyExists] = useState(false); // 🔹 track if chat exists
+  const [alreadyExists, setAlreadyExists] = useState(false); //  track if chat exists
   const { currentUser } = useUserStore();
   const [loading, setLoading] = useState(false)
   const [addLoading, setAddLoading]= useState(false)
 
 const handleSearch = async (e) => {
   e.preventDefault();
-  setLoading(true); // 🔹 start loading
+  setLoading(true); //  start loading
 
   const formData = new FormData(e.target);
   const username = formData.get("username");
@@ -26,17 +26,17 @@ const handleSearch = async (e) => {
     if (!querySnapShot.empty) {
       const foundUser = querySnapShot.docs[0].data();
 
-      // 🚫 Prevent searching yourself
+      //  Prevent searching yourself
       if (foundUser.id === currentUser.id) {
         setUser(null);
         setAlreadyExists(false);
-        setLoading(false); // 🔹 stop loading
+        setLoading(false); //  stop loading
         return;
       }
 
       setUser(foundUser);
 
-      // 🔹 Check if chat already exists
+      //  Check if chat already exists
       const userChatRef = doc(db, "userchats", currentUser.id);
       const userChatsDoc = await getDoc(userChatRef);
 
@@ -54,7 +54,7 @@ const handleSearch = async (e) => {
   } catch (err) {
     console.log(err);
   } finally {
-    setLoading(false); // 🔹 always stop loading (success or error)
+    setLoading(false); //  always stop loading (success or error)
   }
 };
 
@@ -63,7 +63,7 @@ const handleSearch = async (e) => {
 const handleAdd = async () => {
   if (!user || alreadyExists) return;
 
-  setAddLoading(true); // 🔹 start loading
+  setAddLoading(true); //  start loading
 
   const chatRef = collection(db, "chats");
   const userChatRef = collection(db, "userchats");
