@@ -159,7 +159,7 @@ useEffect(() => {
               <div className='w-15 h-15 rounded-[50%]'>
                 <img
                   className='object-cover rounded-[50%] h-full w-full'
-                  src={isBlocked ? "./avatar.svg" : chat.user.avatar || "./avatar.svg"}
+                  src={isBlocked ? "./avatar.svg" : chat.user?.avatar && chat.user.avatar.trim() !== "" ? chat.user.avatar : "./avatar.svg"}
                   alt=''
                 />
               </div>
@@ -186,6 +186,7 @@ useEffect(() => {
 
         )}
       </div>
+      <div className='absolute bottom-0 w-full flex justify-center items-center text-sm text-gray-600'>© 2025 BridgeTalk. Licensed under the GNU AGPL v3.</div>
 
       {addMode && <AddUser setAddMode={setAddMode} />}
     </div>

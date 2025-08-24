@@ -164,7 +164,7 @@ export function Login() {
       await setDoc(doc(db, "users", googleUser.uid), {
         username: googleUsername,
         email: googleUser.email,
-        avatar: googleUser.photoURL || "./avatar.svg",
+        avatar: "./avatar.svg",
         id: googleUser.uid,
         blocked: [],
       });

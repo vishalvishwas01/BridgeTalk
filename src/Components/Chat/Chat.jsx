@@ -705,7 +705,7 @@ const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
           <div onClick={()=>setProfile(true)} className='w-12 lg:w-15 cursor-pointer h-12 lg:h-15 rounded-[50%]'><img className='object-cover rounded-[50%] h-full w-full' src={!isCurrentUserBlocked && user?.avatar || './avatar.svg'} alt=''/></div>
           <div className='flex flex-col justify-start items-start'>
             <div className='text-white font-semibold'>{!isCurrentUserBlocked ? user?.username : "User"}</div>
-            <div className='truncate w-40 lg:w-120 text-neutral-300'>{!isCurrentUserBlocked ? user?.desc : ""}</div>
+            <div className='truncate block lg:hidden w-40 lg:w-120 text-neutral-300'>{!isCurrentUserBlocked ? user?.desc : ""}</div>
           </div>
         </div>
         <div className='w-full flex justify-end items-center gap-5'>
@@ -1113,19 +1113,12 @@ const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
 
           
 
-          {chat?.typing && Object.entries(chat.typing).map(([uid, isTyping]) => (
-            uid !== currentUser.id && isTyping && (
-              <div key={uid} className="text-md text-white ml-12 font-semibold bg-black/80 w-25 rounded-2xl italic px-2 py-1">
-                typing<span><SyncLoader size={5} color='#ffff' /></span>
-              </div>
-            )
-          ))}
 
         <div ref={endRef}></div>
         {showScrollDown && (
           <button
-            onClick={() => endRef.current?.scrollIntoView({ behavior: "smooth" })}
-            className="absolute bottom-30 z-50 cursor-pointer left-1/2 -translate-x-1/2 bg-black text-white p-2 rounded-full shadow-lg hover:bg-gray-800 transition"
+          onClick={() => endRef.current?.scrollIntoView({ behavior: "smooth" })}
+          className="absolute bottom-30 z-50 cursor-pointer left-1/2 -translate-x-1/2 bg-black text-white p-2 rounded-full shadow-lg hover:bg-gray-800 transition"
           >
             <ArrowDown size={24} />
           </button>
@@ -1138,6 +1131,13 @@ const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
       </div>
 
       {/* message send section */}
+        {chat?.typing && Object.entries(chat.typing).map(([uid, isTyping]) => (
+          uid !== currentUser.id && isTyping && (
+            <div key={uid} className="text-md text-white mb-2 ml-4 font-semibold bg-black/80 w-25 rounded-2xl italic px-2 py-1">
+              typing<span><SyncLoader size={5} color='#ffff' /></span>
+            </div>
+          )
+        ))}
 
       {(!isCurrentUserBlocked && !isReceiverBlocked) ? <div className=' z-10 w-full h-auto flex justify-start items-center gap-5 px-3 pb-1 ' >
         <div className='w-full h-auto flex p-2 px-4 flex-col gap-2 justify-start items-center bg-gray-600 rounded-2xl' style={{ boxShadow: '0 -8px 6px -4px rgba(0, 0, 0, 0.2)' }}>

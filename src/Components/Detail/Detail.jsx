@@ -146,7 +146,7 @@ const handleDelete = async () => {
     </div>}
 
     <div className={`
-          fixed inset-0 z-50 flex flex-col justify-between px-2 py-3 bg-[#DDDAD0]
+          fixed inset-0 z-50 flex-1 flex-col justify-between px-2 py-3 bg-[#DDDAD0]
           h-[100dvh] w-[100dvw]
           xl:static xl:h-auto xl:w-auto xl:flex
           ${className}
