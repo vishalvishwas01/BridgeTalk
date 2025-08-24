@@ -113,7 +113,7 @@ useEffect(() => {
       {/* Search + Add User */}
       <div className='w-full h-auto flex justify-between items-center gap-5'>
         <div className='UserInfoBg flex gap-2 h-auto w-full rounded-2xl px-2 py-2'>
-          <img className='object-cover h-8 w-8' src='./search.png' />
+          <img className='object-cover h-8 w-8' src='./search.png' alt='' aria-label="add user"/>
           <input
             className='outline-0 text-black w-full'
             type='text'

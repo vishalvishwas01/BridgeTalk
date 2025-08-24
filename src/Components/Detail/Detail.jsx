@@ -153,7 +153,7 @@ const handleDelete = async () => {
         `} 
       style={{ boxShadow: '-8px 0 6px -4px rgba(0, 0, 0, 0.2)' }}>
       <div className='border-b-2 border-gray-400 pb-4 w-full h-auto flex flex-col justify-center items-center gap-5'>
-        <button onClick={()=>setProfile(true)} className='flex justify-center items-center w-30 h-30 cursor-pointer'><img className='w-full h-full object-cover rounded-[50%]' src={!isCurrentUserBlocked ? user?.avatar  : "./avatar.svg"} alt=''/></button>
+        <button aria-label='profile'  onClick={()=>setProfile(true)} className='flex justify-center items-center w-30 h-30 cursor-pointer'><img className='w-full h-full object-cover rounded-[50%]' src={!isCurrentUserBlocked ? user?.avatar  : "./avatar.svg"} alt=''/></button>
           <div onClick={()=>{setActiveDetail("")}} className='absolute left-5 top-20 xl:hidden bg-gray-400 rounded-lg px-3 py-1'><FaArrowLeft /></div>
         <div className='w-full flex justify-center items-center text-3xl font-semibold'>{!isCurrentUserBlocked ? user?.username : "User"}</div>
         <div className='w-full h-auto flex flex-col justify-start items-start'>

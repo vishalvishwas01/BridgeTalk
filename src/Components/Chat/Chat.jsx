@@ -1187,6 +1187,7 @@ const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
                 <div className="flex gap-2 items-center">
                   {!isRecording ? (
                     <button
+                    aria-label='mic'
                       onClick={startRecording}
                       className="bg-black rounded-full w-10 h-10 flex justify-center items-center text-white"
                     >
