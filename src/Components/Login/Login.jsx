@@ -194,9 +194,6 @@ export function Login() {
     <>
       <div className="absolute top-0 z-[-2] h-screen w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]"></div>
       <div className="w-screen h-screen flex flex-col justify-center items-center gap-10">
-        <div className='w-full max-w-md flex justify-center items-center h-auto '>
-          <div className='bg-gray-300 rounded-2xl p-2 text-4xl text-blue-900 font-semibold'>BridgeTalk</div>
-        </div>
         <div className="shadow-input mx-auto w-full max-w-md rounded-none bg-white p-4 md:rounded-2xl md:p-8 dark:bg-black">
           <AnimatePresence>
             <h2 className="text-xl font-bold text-neutral-800 dark:text-neutral-200">

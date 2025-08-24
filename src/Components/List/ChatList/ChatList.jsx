@@ -36,7 +36,7 @@ const ChatList = ({ setActiveView }) => {
 
     changeChat(chat.chatId, chat.user)
     localStorage.setItem("lastChat", JSON.stringify(chat)) 
-     //  Switch to chat view only on small screens
+     // ✅ Switch to chat view only on small screens
       if (window.innerWidth < 1280) {
         setActiveView("chat");
       }
@@ -130,7 +130,7 @@ useEffect(() => {
       </div>
 
       {/* Chats list */}
-      <div className='w-full h-full overflow-y-auto overflow-x-hidden flex flex-col justify-start items-center gap-5 py-1'>
+      <div className='w-full h-[70%] sm:h-[68vh] overflow-y-auto overflow-x-hidden flex flex-col justify-start items-center gap-5 py-1'>
         {loading ? (
           // Skeleton loader
           <>
@@ -142,10 +142,10 @@ useEffect(() => {
             ))}
           </>
         ) : filteredChats.length === 0 ? (
-          //  Show "no users" if empty AFTER loading
+          // Show "no users" if empty AFTER loading
           <div className="text-gray-600 mt-5">No users to chat</div>
         ) : (
-          //  Show chats
+          // Show chats
          filteredChats.map((chat) => {
           const isBlocked = chat.user.blocked.includes(currentUser.id);
 
@@ -186,7 +186,7 @@ useEffect(() => {
 
         )}
       </div>
-      <div className='absolute bottom-0 w-full flex justify-center items-center text-sm text-gray-600'>© 2025 BridgeTalk. Licensed under the GNU AGPL v3.</div>
+      <div className='absolute bottom-0 w-full flex justify-center items-center text-sm text-gray-600 bg-[#DDDAD0]'>© 2025 BridgeTalk. Licensed under the GNU AGPL v3.</div>
 
       {addMode && <AddUser setAddMode={setAddMode} />}
     </div>
