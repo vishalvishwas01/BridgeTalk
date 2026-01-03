@@ -10,7 +10,7 @@
 ---
 
 # Live Link
-> <a href="https://bridge-talk-privated.vercel.app" target="_blank">Open BridgeTalk</a>
+> <a href="https://www.bridgetalk.gleeze.com" target="_blank">Open BridgeTalk</a>
 ---
 
 ## 🚀 Features  
